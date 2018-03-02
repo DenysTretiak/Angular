@@ -1,0 +1,13 @@
+<div class="card card-block "
+  ccCardHover>
+  <h4 class="card-title">{{data.setup }}</h4>
+
+      <p
+       [hidden] = "data.hide"
+        class="card-text">
+        {{data.punchline}}
+      </p>
+  <a>
+    <button (click) = 'data.toggle()' class='btn btn-default'>Hide of Show</button>
+   </a>
+</div>
