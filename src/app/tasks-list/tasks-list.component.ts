@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./tasks-list.component.css']
 })
 export class TasksListComponent{
-  @Input('func') data:any;
+  @Input('func') data:string;
 
-  tasks: any[] = [
+  tasks: Object[] = [
     {
       text:"Learn angular"
     },

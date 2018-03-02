@@ -7,9 +7,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class TaskComponent  {
- @Input('task') data:any ;
-
+ @Input('task') data:string;
  @Output() taskDeleted = new EventEmitter<string>();
+
  deleteTask(text:string){
    this.taskDeleted.emit(text);
  }

@@ -23,7 +23,6 @@ import { CheckedDirective } from './checked.directive';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
