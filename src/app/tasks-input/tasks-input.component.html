@@ -1,0 +1,14 @@
+<div id="myDIV" class="header">
+  <h2>My To Do List</h2>
+  <form>
+    <div class="form-group">
+    <input #text type="text"
+            id="myInput"
+            placeholder="Title..."
+            name="text">
+  </div>
+    <span (click) = " createTask(text.value); text.value=''"
+            class="addBtn">
+            Add </span>
+  </form>
+</div>
