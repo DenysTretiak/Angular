@@ -1,27 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { TodoListModule } from './todo-list/todo-list.module'
+
 
 import { AppComponent } from './app.component';
-import { TasksListComponent } from './tasks-list/tasks-list.component';
-import { TasksInputComponent } from './tasks-input/tasks-input.component';
-import { TaskComponent } from './task/task.component';
-import { CheckedDirective } from './checked.directive';
+import { TodoListComponent } from './todo-list/todo-list.component'
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TasksListComponent,
-    TasksInputComponent,
-    TaskComponent,
-    CheckedDirective,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    FormsModule
+    TodoListModule
   ],
   bootstrap: [AppComponent]
 })
