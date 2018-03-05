@@ -1,3 +1,11 @@
-<p>
-  courses-list works!
-</p>
+<ul>
+  <div *ngFor="let course of courses">
+    <!--<ngb-alert type="info" [dismissible]="false">-->
+      <!--<h3><a href="#">{{course}}</a> </h3>-->
+      <!--<p>{{course}}</p>-->
+      <!--<div>-->
+        <!--<a href="{{course}}" target="_blank" class="btn btn-danger">Go To Course</a>-->
+      <!--</div>-->
+    <a href="#">{{course}}</a>
+  </div>
+</ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TodoService } from "../tasks.service";
 
 @Component({
   selector: 'app-task',
@@ -9,9 +10,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TaskComponent  {
  @Input('task') data:string;
  @Output() taskDeleted = new EventEmitter<string>();
+ constructor(private todoService:TodoService){
+
+ }
 
  deleteTask(text:string){
-   this.taskDeleted.emit(text);
+   this.todoService.deleteTask('task1');
+   console.log('delete');
  }
 
 }
