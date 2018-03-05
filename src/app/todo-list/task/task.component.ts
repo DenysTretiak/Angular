@@ -9,14 +9,20 @@ import { TodoService } from "../tasks.service";
 
 export class TaskComponent  {
  @Input('task') data:string;
- @Output() taskDeleted = new EventEmitter<string>();
+ // @Output() taskDeleted = new EventEmitter<string>();
+ tasksObj:any;
  constructor(private todoService:TodoService){
-
+   todoService.getTasksObj()
+       .subscribe(item => this.tasksObj = item);
  }
 
  deleteTask(text:string){
-   this.todoService.deleteTask('task1');
-   console.log('delete');
+     for (let key in this.tasksObj){
+         if (text === this.tasksObj[key].text){
+             this.todoService.deleteTask(key);
+         }
+     }
+
  }
 
 }

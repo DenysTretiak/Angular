@@ -25,7 +25,8 @@ export class TasksListComponent implements OnInit{
     this.tasks.splice(this.tasks.indexOf(text), 1)
   }
     ngOnInit(){
-        this.todoService.getTasks().subscribe(item => this.tasks = item);
+         // this.todoService.getTasksList(this.tasks);
+        this.todoService.getTasksList().subscribe(item => this.tasks = item);
   }
 
 

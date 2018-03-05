@@ -1,30 +1,35 @@
 import { Injectable } from "@angular/core";
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase,  } from 'angularfire2/database';
+import { FirebaseListObservable } from 'angularfire2/database-deprecated'
 import { Observable } from 'rxjs/Observable';
 import {Todo} from "../../../../Angular_Application/src/app/todo-list/shared/todo";
 
 
 @Injectable()
 export class TodoService{
-    tasks:any;
+    tasksList:any;
+    tasksObj:any;
     ref:string = 'tasks/'
 
     constructor(private db:AngularFireDatabase){
-        this.tasks = db.list('/tasks');
+        this.tasksObj = db.object(this.ref);
+        this.tasksList = db.list(this.ref);
     }
 
-    getTasks(){
-        return this.tasks.valueChanges();
+    getTasksList(){
+        return this.tasksList.valueChanges();
     }
-    // this.firebaseService.createData(this.ref + '/' + title, new Todo(title))
+    getTasksObj(){
+        return this.tasksObj.valueChanges();
+    }
+
     addTask(value:string){
-       // this.tasks.push({text:value, condition:'notchecked'});
-        this.db.createData(this.ref + '/' + value, 'some');
+       this.tasksList.push({text:value, condition:'notchecked'});
     }
-    // database().ref(key).set(data)
+
     deleteTask(title:string){
-        this.tasks.remove(title);
-        console.log()
+        this.tasksList.remove(title);
+        // console.log(title);
     }
 
 }
