@@ -6,7 +6,7 @@ import { TasksInputComponent } from './tasks-input/tasks-input.component';
 import { TaskComponent } from './task/task.component';
 import { TodoListComponent } from './todo-list.component';
 import { CheckedDirective } from '../checked.directive';
-import { TodoService} from "./tasks.service";
+import { TodoService} from "./shared/tasks.service";
 
 @NgModule({
   declarations: [

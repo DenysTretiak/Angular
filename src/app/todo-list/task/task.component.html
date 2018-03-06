@@ -1,4 +1,4 @@
-<li appChecked (click) = "toggleTask()">
+<li  [ngClass] = "{'checked':data.checked}" (click) = "toggleTask(data.text)">
   {{data.text}}
   <img (click) = 'deleteTask(data.text)' class='trash' src='https://cdn2.iconfinder.com/data/icons/web/512/Trash_Can-512.png'>
 </li>

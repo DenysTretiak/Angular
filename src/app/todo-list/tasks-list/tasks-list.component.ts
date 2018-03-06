@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import {TodoService} from "../tasks.service";
+import {TodoService} from "../shared/tasks.service";
 
 
 @Component({
