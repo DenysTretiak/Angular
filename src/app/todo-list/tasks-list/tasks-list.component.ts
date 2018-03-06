@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { Component, OnInit} from '@angular/core';
 import {TodoService} from "../shared/tasks.service";
 
 
@@ -10,24 +9,13 @@ import {TodoService} from "../shared/tasks.service";
 })
 export class TasksListComponent implements OnInit{
   tasks: Object[];
-
   constructor(private todoService:TodoService){
 
   }
-
-
   addTask(text:string){
     this.todoService.addTask(text);
-    // this.tasks.unshift({text:text});
-
-  }
-  deleteTask(text:string){
-    this.tasks.splice(this.tasks.indexOf(text), 1)
   }
     ngOnInit(){
-         // this.todoService.getTasksList(this.tasks);
-        this.todoService.getTasksList().subscribe(item => this.tasks = item);
+        this.todoService.getTasks().subscribe(item => this.tasks = item);
   }
-
-
 }

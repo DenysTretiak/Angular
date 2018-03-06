@@ -7,7 +7,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from './../environments/environment';
 
 import { AppComponent } from './app.component';
-import { CoursesListComponent } from './courses-list/courses-list.component';
+
 
 
 
@@ -15,8 +15,7 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CoursesListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,8 @@
-import {database} from "firebase";
+
 
 export class Todo{
-    constructor(public text:string, public checked:boolean){
+    constructor(private text:string, public checked:boolean = false){
 
     }
 
-    // toggle(value){
-    //      value = !value;
-    // }
 }
