@@ -15,16 +15,17 @@ export class TaskComponent  {
  constructor(private todoService:TodoService){
  }
 
- deleteTask(text:string){
+ deleteTask(text:string, e:Event){
      this.todoService.deleteTask(text);
-     this.isDeleted = true;
+     e.stopPropagation();
+     // this.isDeleted = true;
  }
 
  toggleTask(text:string){
    this.data.checked = !this.data.checked;
-             if (!this.isDeleted){
+             // if (!this.isDeleted){
                  this.todoService.updateTask(text, new Todo(text, this.data.checked));
-             }
+             // }
  }
 
 }
