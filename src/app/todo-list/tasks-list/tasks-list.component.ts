@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import {TodoService} from "../shared/tasks.service";
+import { TodoService } from "../shared/tasks.service";
+import { Todo } from '../shared/todo'
 
 
 @Component({
@@ -8,7 +9,7 @@ import {TodoService} from "../shared/tasks.service";
   styleUrls: ['./tasks-list.component.css']
 })
 export class TasksListComponent implements OnInit{
-  tasks: Object[];
+  tasks: Todo[];
   constructor(private todoService:TodoService){
 
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TodoService} from "../shared/tasks.service";
 
 
@@ -8,13 +8,14 @@ import { TodoService} from "../shared/tasks.service";
   styleUrls: ['./tasks-input.component.css']
 })
 export class TasksInputComponent {
-
+  @ViewChild('f') form: any;
   constructor(private todoService:TodoService){
 
   }
-  createTask(text:string){
-    if (text.length>0){
-      this.todoService.addTask(text);
-    }
+    onSubmit(text:string){
+     if (this.form.valid){
+         this.todoService.addTask(text);
+         this.form.reset();
+     }
   }
 }

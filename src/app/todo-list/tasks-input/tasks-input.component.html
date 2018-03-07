@@ -1,14 +1,16 @@
 <div id="myDIV" class="header">
   <h2>My To Do List</h2>
-  <form>
+  <form #f="ngForm" (ngSubmit)="onSubmit(text.value)">
     <div class="form-group">
     <input #text type="text"
             id="myInput"
             placeholder="Title..."
-            name="text">
+            name="text"
+            ngModel
+            required>
   </div>
-    <span (click) = " createTask(text.value); text.value=''"
-            class="addBtn">
-            Add </span>
+    <button type="submit" class="addBtn"> Add </button>
+    <!--<pre>{{f.value | json}}</pre>-->
   </form>
 </div>
+<!--(click) = " createTask(text.value); text.value=''"-->

@@ -10,7 +10,6 @@ import { Todo } from '../shared/todo';
 
 export class TaskComponent  {
  @Input('task') data:Todo;
- isDeleted:boolean;
 
  constructor(private todoService:TodoService){
  }
@@ -18,14 +17,14 @@ export class TaskComponent  {
  deleteTask(text:string, e:Event){
      this.todoService.deleteTask(text);
      e.stopPropagation();
-     // this.isDeleted = true;
+
  }
 
  toggleTask(text:string){
    this.data.checked = !this.data.checked;
-             // if (!this.isDeleted){
+
                  this.todoService.updateTask(text, new Todo(text, this.data.checked));
-             // }
+
  }
 
 }
