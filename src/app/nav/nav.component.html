@@ -1,0 +1,8 @@
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand"
+     routerLink='home'>Angular Apps</a>
+  <ul class="nav navbar-nav">
+    <app-link *ngFor = "let link of links" [link]="link" >
+    </app-link>
+  </ul>
+</nav>

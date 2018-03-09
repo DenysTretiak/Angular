@@ -1,0 +1,26 @@
+.bg-faded {
+    background-color: #f7f7f9;
+}
+.navbar {
+    position: relative;
+    padding: .5rem 1rem;
+    display:block;
+}
+.navbar-brand {
+    float: left;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+.navbar-light .navbar-brand {
+    color: rgba(0,0,0,.8);
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.navbar-nav {
+    display:inline-block;
+}
