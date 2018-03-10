@@ -1,28 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { TodoService } from "../shared/tasks.service";
+import { Todo } from '../shared/todo'
+
 
 @Component({
   selector: 'app-tasks-list',
   templateUrl: './tasks-list.component.html',
   styleUrls: ['./tasks-list.component.css']
 })
-export class TasksListComponent{
-  @Input('func') data:string;
+export class TasksListComponent implements OnInit{
+  tasks: Todo[];
+  constructor(private todoService:TodoService){
 
-  tasks: Object[] = [
-    {
-      text:"Learn angular"
-    },
-    {
-      text:"Do some tasks with it"
-    }
-  ];
-
+  }
   addTask(text:string){
-    this.tasks.unshift({text:text});
+    this.todoService.addTask(text);
   }
-  deleteTask(text:string){
-    this.tasks.splice(this.tasks.indexOf(text), 1)
+    ngOnInit(){
+        this.todoService.getTasks().subscribe(item => this.tasks = item);
   }
-
-
 }

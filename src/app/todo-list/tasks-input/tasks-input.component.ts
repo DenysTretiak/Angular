@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { TodoService} from "../shared/tasks.service";
 
 
 @Component({
@@ -8,11 +8,14 @@ import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
   styleUrls: ['./tasks-input.component.css']
 })
 export class TasksInputComponent {
-  @Output() taskCreated = new EventEmitter<string>();
+  @ViewChild('f') form: any;
+  constructor(private todoService:TodoService){
 
-  createTask(text:string){
-    if (text.length>0){
-      this.taskCreated.emit(text);
-    }
+  }
+    onSubmit(text:string){
+     if (this.form.valid){
+         this.todoService.addTask(text);
+         this.form.reset();
+     }
   }
 }

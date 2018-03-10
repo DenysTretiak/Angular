@@ -1,17 +1,34 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
+import { TodoService } from "../shared/tasks.service";
+import { Todo } from '../shared/todo';
 import * as _ from 'lodash';
+
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
 
-export class TaskComponent implements OnInit {
- @Input('task') data:string;
- @Output() taskDeleted = new EventEmitter<string>();
 
- deleteTask(text:string){
-   this.taskDeleted.emit(text);
+export class TaskComponent  {
+ @Input('task') data:Todo;
+
+ constructor(private todoService:TodoService){
+ }
+
+ deleteTask(text:string, e:Event){
+     this.todoService.deleteTask(text);
+     e.stopPropagation();
+
+ }
+
+ toggleTask(text:string){
+   this.data.checked = !this.data.checked;
+
+                 this.todoService.updateTask(text, new Todo(text, this.data.checked));
+
+
  }
 
  ngOnInit(){
