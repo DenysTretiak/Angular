@@ -24,7 +24,7 @@ import { AppRoutingModule } from './appRouting.module';
     TodoListModule,
       AngularFireModule.initializeApp(environment.firebase),
       AngularFireDatabaseModule,
-      AngularFireAuthModule
+      AngularFireAuthModule,
       NavModule,
     TranslatorModule,
     HomeModule,
