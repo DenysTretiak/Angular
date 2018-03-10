@@ -9,9 +9,10 @@ import { FirebaseService } from "./firebase.service";
 
 import { AppComponent } from './app.component';
 
-
-
-
+import { TranslatorModule} from './translator/translator.module';
+import { HomeModule } from "./home/home.module";
+import { NavModule } from './nav/nav.module';
+import { AppRoutingModule } from './appRouting.module';
 
 
 @NgModule({
@@ -24,6 +25,11 @@ import { AppComponent } from './app.component';
       AngularFireModule.initializeApp(environment.firebase),
       AngularFireDatabaseModule,
       AngularFireAuthModule
+      NavModule,
+    TranslatorModule,
+    HomeModule,
+    AppRoutingModule
+
   ],
   providers:[FirebaseService],
   bootstrap: [AppComponent]
