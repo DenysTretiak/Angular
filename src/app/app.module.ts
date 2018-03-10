@@ -4,10 +4,10 @@ import { TodoListModule } from './todo-list/todo-list.module'
 
 
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component'
-
-
-
+import { TranslatorModule} from './translator/translator.module';
+import { HomeModule } from "./home/home.module";
+import { NavModule } from './nav/nav.module';
+import { AppRoutingModule } from './appRouting.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,11 @@ import { TodoListComponent } from './todo-list/todo-list.component'
   ],
   imports: [
     BrowserModule,
-    TodoListModule
+    TodoListModule,
+      NavModule,
+    TranslatorModule,
+    HomeModule,
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })

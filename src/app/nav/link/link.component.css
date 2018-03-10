@@ -1,0 +1,10 @@
+.nav-item {
+    float: left;
+}
+.nav-link {
+    display: block;
+    margin-left: 10px;
+    padding-top: .425rem;
+    padding-bottom: .425rem;
+    color: rgba(0,0,0,.8);
+}
