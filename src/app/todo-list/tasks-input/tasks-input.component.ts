@@ -9,10 +9,10 @@ import { TodoService} from "../shared/tasks.service";
 })
 export class TasksInputComponent {
   @ViewChild('f') form: any;
-  constructor(private todoService:TodoService){
+  constructor(private todoService: TodoService){
 
   }
-    onSubmit(text:string){
+    onSubmit(text: string){
      if (this.form.valid){
          this.todoService.addTask(text);
          this.form.reset();
