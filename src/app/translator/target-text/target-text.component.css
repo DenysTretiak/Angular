@@ -1,0 +1,9 @@
+textarea{
+    font: 600 20px Arial;
+    padding: 20px 20px 32px;
+    resize: none;
+    display: block;
+}
+div{
+    width:50%;
+}

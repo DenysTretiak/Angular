@@ -1,0 +1,14 @@
+form{
+    margin:20px;
+}
+button{
+    background: #357ae8;
+    border: 1px solid #357ae8;
+    padding: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+div{
+    display: flex;
+    flex-wrap:wrap;
+}

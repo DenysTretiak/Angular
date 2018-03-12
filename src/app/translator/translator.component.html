@@ -1,3 +1,7 @@
-<p>
-  translator works!
-</p>
+<form class='form' >
+  <div>
+    <app-source-text></app-source-text>
+    <app-target-text [targetText]="targetText"></app-target-text>
+  </div>
+</form>
+<button (click) = "getTranslate()"  class='button'>Перевести</button>

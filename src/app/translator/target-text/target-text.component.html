@@ -1,0 +1,10 @@
+<div>
+  <select  #select (input)="setInput(select.value)">
+    <option *ngFor = "let option of options"
+            value="{{option.value}}">
+      {{option.title}}
+    </option>
+  </select>
+  <textarea rows="6" name="text" readonly>{{targetText}}</textarea>
+</div>
+

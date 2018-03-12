@@ -29,7 +29,6 @@ import { AppRoutingModule } from './appRouting.module';
     TranslatorModule,
     HomeModule,
     AppRoutingModule
-
   ],
   providers:[FirebaseService],
   bootstrap: [AppComponent]
