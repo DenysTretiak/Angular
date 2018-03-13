@@ -15,7 +15,7 @@ export class TranslatorComponent{
   }
 
   getTranslate(){
-       this.http.targetText = this.http.getPromise(this.http.sourceText);
+       this.http.targetText = this.http.getTranslate(this.http.sourceText);
   }
 
 

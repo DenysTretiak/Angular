@@ -23,7 +23,7 @@ export class HttpService {
 
     }
 
-    getPromise(text:string):Observable<string>{
+    getTranslate(text:string):Observable<string>{
         this.sourceText = text;
         let link:string  = `${this.url}${this.sourceLang}&tl=${this.targetLang}&dt=t&q=${this.sourceText}`;
         return this.http.get(link)
