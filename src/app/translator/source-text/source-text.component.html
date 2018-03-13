@@ -5,6 +5,9 @@
                 {{option.title}}
          </option>
      </select>
-     <textarea rows="6" name="text" #text (input)="setInputText(text.value)"></textarea>
+     <textarea rows="6"  name="text" #text
+               (input)="setInputText(text.value)"
+               [formControl]="searchField">
+     </textarea>
  </div>
 

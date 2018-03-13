@@ -1,7 +1,7 @@
-<form class='form' >
+<form class='form' (ngSubmit)="getTranslate()">
   <div>
     <app-source-text></app-source-text>
-    <app-target-text [targetText]="targetText"></app-target-text>
+    <app-target-text></app-target-text>
   </div>
+  <button type="submit"  class='button'>Перевести</button>
 </form>
-<button (click) = "getTranslate()"  class='button'>Перевести</button>

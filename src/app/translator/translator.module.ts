@@ -5,6 +5,7 @@ import { SourceTextComponent } from './source-text/source-text.component';
 import { TargetTextComponent } from './target-text/target-text.component';
 import { HttpService } from './shared/http.service';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule,  FormControl, FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,9 @@ import { HttpModule } from '@angular/http';
     ],
     imports: [
         BrowserModule,
-        HttpModule
+        HttpModule,
+        ReactiveFormsModule,
+        FormsModule
     ],
     exports: [TranslatorComponent],
     providers: [HttpService]

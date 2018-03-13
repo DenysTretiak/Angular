@@ -1,26 +1,22 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { HttpService } from "./shared/http.service";
+import { Component} from '@angular/core';
+import { HttpService } from './shared/http.service';
+
 
 @Component({
   selector: 'app-translator',
   templateUrl: './translator.component.html',
   styleUrls: ['./translator.component.css']
 })
-export class TranslatorComponent implements OnInit{
+export class TranslatorComponent{
 
-  targetText:string;
 
   constructor(private http:HttpService){
 
   }
 
   getTranslate(){
-      this.http.getPromise().subscribe(item => this.targetText = item);
-      console.log(this.targetText);
+       this.http.targetText = this.http.getPromise(this.http.sourceText);
   }
 
-  ngOnInit(){
-
-  }
 
 }

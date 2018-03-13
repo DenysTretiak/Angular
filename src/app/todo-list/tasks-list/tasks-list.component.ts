@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { TodoService } from "../shared/tasks.service";
-import { Todo } from '../shared/todo'
+import { Todo } from '../shared/todo';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Todo } from '../shared/todo'
   styleUrls: ['./tasks-list.component.css']
 })
 export class TasksListComponent implements OnInit{
-  tasks: Todo[];
+  tasks: Observable<Todo[]>;
   constructor(private todoService:TodoService){
 
   }
@@ -17,6 +18,6 @@ export class TasksListComponent implements OnInit{
     this.todoService.addTask(text);
   }
     ngOnInit(){
-        this.todoService.getTasks().subscribe(item => this.tasks = item);
-  }
+        this.tasks = this.todoService.getTasks();
+    }
 }

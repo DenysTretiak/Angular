@@ -5,6 +5,6 @@
       {{option.title}}
     </option>
   </select>
-  <textarea rows="6" name="text" readonly>{{targetText}}</textarea>
+  <textarea rows="6" name="text" readonly>{{http.targetText | async}}</textarea>
 </div>
 
