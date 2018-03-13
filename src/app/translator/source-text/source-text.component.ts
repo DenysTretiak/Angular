@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { options } from '../shared/options';
+import { OptionService } from '../shared/options.service';
 import { Option } from '../shared/option';
 import { HttpService } from '../shared/http.service';
 import { FormControl } from "@angular/forms";
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
+import {FirebaseService} from "../../firebase.service";
 
 @Component({
   selector: 'app-source-text',
@@ -11,10 +13,12 @@ import 'rxjs/Rx';
   styleUrls: ['./source-text.component.css']
 })
 export class SourceTextComponent implements OnInit {
-  options:Option[];
+  options:Observable<Option[]>;
+  ref = '/options';
   searchField: FormControl;
 
-  constructor (private http:HttpService){
+  constructor (private http:HttpService,
+               private fb:FirebaseService){
 
   }
 
@@ -26,7 +30,7 @@ export class SourceTextComponent implements OnInit {
         this.http.setSourceText(text);
     }
     ngOnInit() {
-    this.options = options;
+    this.options = this.fb.getData(this.ref);
     this.searchField = new FormControl();
     this.searchField.valueChanges
         .debounceTime(400)

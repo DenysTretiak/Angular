@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { options } from '../shared/options';
+// import { options } from '../shared/options.service';
 import { Option } from '../shared/option';
 import { HttpService } from '../shared/http.service';
+import { Observable } from "rxjs/Observable";
+import { FirebaseService } from "../../firebase.service";
 
 @Component({
   selector: 'app-target-text',
@@ -10,8 +12,11 @@ import { HttpService } from '../shared/http.service';
 })
 export class TargetTextComponent implements OnInit {
 
-    options:Option[];
-    constructor(private http:HttpService){
+    options:Observable<Option[]>;
+    ref = '/options';
+
+    constructor(private http:HttpService
+                private fb:FirebaseService){
 
     }
 
@@ -20,6 +25,7 @@ export class TargetTextComponent implements OnInit {
         this.http.targetText = this.http.getPromise(this.http.sourceText);
     }
     ngOnInit() {
-        this.options = options.slice(1);
+        this.fb.getData(this.ref)
+            .subscribe(item => this.options = item.slice(1));
     }
 }

@@ -1,6 +1,6 @@
  <div>
      <select #select (input)="setInputLang(select.value)">
-         <option *ngFor = "let option of options"
+         <option *ngFor = "let option of options  | async"
                  value="{{option.value}}">
                 {{option.title}}
          </option>
