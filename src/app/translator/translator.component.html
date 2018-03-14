@@ -1,3 +1,7 @@
-<p>
-  translator works!
-</p>
+<form class='form' (ngSubmit)="getTranslate()">
+  <div>
+    <app-source-text></app-source-text>
+    <app-target-text></app-target-text>
+  </div>
+  <button type="submit"  class='button'>Перевести</button>
+</form>

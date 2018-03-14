@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { HomeComponent } from "./home/home.component";
-import { TranslatorComponent } from "./translator/translator.component";
-import { TodoListComponent } from "./todo-list/todo-list.component";
+import { HomeComponent } from './home/home.component';
+import { TranslatorComponent } from './translator/translator.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 const appRoutes:Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,7 +19,7 @@ const appRoutes:Routes = [
 @NgModule({
     imports: [
         BrowserModule,
-        RouterModule.forRoot(appRoutes, {useHash: true})
+        RouterModule.forRoot(appRoutes)
     ],
     exports:[RouterModule]
 })
