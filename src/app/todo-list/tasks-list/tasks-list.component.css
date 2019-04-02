@@ -1,5 +1,4 @@
-/* Remove margins and padding from the list */
-ul {
+.tasks-list {
     margin: 0;
     padding: 0;
 }

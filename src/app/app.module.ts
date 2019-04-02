@@ -5,14 +5,14 @@ import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from './../environments/environment';
-import { FirebaseService } from "./firebase.service";
+import { FirebaseService } from './firebase.service';
 
 import { AppComponent } from './app.component';
 
 import { TranslatorModule} from './translator/translator.module';
-import { HomeModule } from "./home/home.module";
+import { HomeModule } from './home/home.module';
 import { NavModule } from './nav/nav.module';
-import { AppRoutingModule } from './appRouting.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({

@@ -22,4 +22,5 @@ import { ReactiveFormsModule,  FormControl, FormsModule } from '@angular/forms';
     exports: [TranslatorComponent],
     providers: [HttpService]
 })
-export class TranslatorModule { }
+
+export class TranslatorModule {}

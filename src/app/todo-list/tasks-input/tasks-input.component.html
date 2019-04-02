@@ -1,14 +1,15 @@
-<div id="myDIV" class="header">
+<div class="header">
   <h2>My To Do List</h2>
-  <form #f="ngForm" (ngSubmit)="onSubmit(text.value)">
+  <form #taskForm="ngForm" (ngSubmit)="onSubmit(text.value)">
     <div class="form-group">
     <input #text type="text"
+            class="tasks-input"
             id="myInput"
             placeholder="Title..."
             name="text"
             ngModel
             required>
   </div>
-    <button type="submit" class="addBtn"> Add </button>
+    <button type="submit" class="add-button"> Add </button>
   </form>
 </div>

@@ -1,7 +1,4 @@
-<!--<div class="container">-->
-  <!--<app-tasks-input (taskCreated) = "addTask($event)"></app-tasks-input>-->
-  <ul id="myUL">
-    <app-task *ngFor="let j of tasks | async" [task]="j">
-    </app-task>
-  </ul>
-<!--</div>-->
+<ul class="tasks-list">
+  <app-task *ngFor="let taskItem of tasks | async" [task]="taskItem">
+  </app-task>
+</ul>

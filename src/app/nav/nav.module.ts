@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NavComponent } from './nav.component';
-import { RouterModule } from "@angular/router";
 import { LinkComponent } from './link/link.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [

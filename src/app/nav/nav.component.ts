@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Link } from './link';
-import { links } from './dataLinks';
+import { links } from './data-links';
+import { Link } from '../interfaces';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit{
+export class NavComponent implements OnInit {
    links:Link[];
 
-   ngOnInit(){
-    this.links = links
-
-    }
-
+   ngOnInit():void {
+    this.links = links;
+  }
 }

@@ -1,4 +1,4 @@
- <div>
+ <div class="source-text-container">
      <select #select (input)="setInputLang(select.value)">
          <option *ngFor = "let option of options  | async"
                  value="{{option.value}}">
@@ -6,6 +6,7 @@
          </option>
      </select>
      <textarea rows="6"  name="text" #text
+                class="source-text-textarea"
                (input)="setInputText(text.value)"
                [formControl]="searchField">
      </textarea>

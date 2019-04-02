@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { TodoService } from "../shared/tasks.service";
-import { Todo } from '../shared/todo';
+import { TodoService } from '../shared/tasks.service';
+import { TodoModel } from '../shared/todo.model';
 
 
 @Component({
@@ -11,22 +11,18 @@ import { Todo } from '../shared/todo';
 
 
 export class TaskComponent  {
- @Input('task') data:Todo;
+ @Input() task:TodoModel;
 
- constructor(private todoService:TodoService){
- }
+ constructor(private todoService:TodoService) {}
 
- deleteTask(text:string, e:Event){
-     this.todoService.deleteTask(text);
-     e.stopPropagation();
-
- }
-
- toggleTask(text:string){
-   this.data.checked = !this.data.checked;
-                 this.todoService.updateTask(text, new Todo(text, this.data.checked));
-
+ deleteTask(text:string, event:Event):void {
+  this.todoService.deleteTask(text);
+  event.stopPropagation();
 
  }
 
+ toggleTask(text:string):void {
+  this.task.checked = !this.task.checked;
+  this.todoService.updateTask(text, new TodoModel(text, this.task.checked));
+ }
 }

@@ -4,37 +4,34 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class HttpService {
-    url:string = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=';
-    sourceLang:string = 'auto';
-    targetLang:string = 'en';
+    private URL:string = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=';
+    private sourceLang:string = 'auto';
+    private targetLang:string = 'en';
+
     sourceText:string;
     targetText:Observable<string>;
-    setSourceLang(val:string){
+
+    constructor(private http:Http) {}
+
+    setSourceLang(val:string):void {
         this.sourceLang = val;
     }
-    setTargetLang(val:string){
+
+    setTargetLang(val:string):void {
         this.targetLang = val;
     }
-    setSourceText(text:string){
+
+    setSourceText(text:string):void {
         this.sourceText = text;
     }
 
-    constructor(private http: Http) {
+    getTranslate(orignalText:string):Observable<string> {
+        this.sourceText = orignalText;
+        const link:string  = `${this.URL}${this.sourceLang}&tl=${this.targetLang}&dt=t&q=${this.sourceText}`;
 
-    }
-
-    getTranslate(text:string):Observable<string>{
-        this.sourceText = text;
-        let link:string  = `${this.url}${this.sourceLang}&tl=${this.targetLang}&dt=t&q=${this.sourceText}`;
         return this.http.get(link)
-            //исправить прикол с комой в двух словах
-            .map(res => {
-                 return res.json()[0].map((item)=>{
-                     return item[0];
-                 });
-            });
+            .map(res => res.json()[0].map(text => text[0]));
     }
-
 }
 
 

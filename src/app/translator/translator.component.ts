@@ -7,16 +7,10 @@ import { HttpService } from './shared/http.service';
   templateUrl: './translator.component.html',
   styleUrls: ['./translator.component.css']
 })
-export class TranslatorComponent{
+export class TranslatorComponent {
+  constructor(private http:HttpService) {}
 
-
-  constructor(private http:HttpService){
-
+  getTranslate():void {
+    this.http.targetText = this.http.getTranslate(this.http.sourceText);
   }
-
-  getTranslate(){
-       this.http.targetText = this.http.getTranslate(this.http.sourceText);
-  }
-
-
 }

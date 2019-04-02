@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { TodoService} from "../shared/tasks.service";
+import { TodoService} from '../shared/tasks.service';
+import { Form, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -8,14 +9,14 @@ import { TodoService} from "../shared/tasks.service";
   styleUrls: ['./tasks-input.component.css']
 })
 export class TasksInputComponent {
-  @ViewChild('f') form: any;
-  constructor(private todoService: TodoService){
+  @ViewChild('taskForm') taskForm:FormControl;
 
-  }
-    onSubmit(text: string){
-     if (this.form.valid){
-         this.todoService.addTask(text);
-         this.form.reset();
-     }
+  constructor(private todoService: TodoService) {}
+
+  onSubmit(text: string):void {
+    if (this.taskForm.valid) {
+        this.todoService.addTask(text);
+        this.taskForm.reset();
+    }
   }
 }

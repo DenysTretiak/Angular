@@ -1,5 +1,6 @@
-<li  [ngClass]="{'checked':data.checked}"
-     (click) = "toggleTask(data.text)">
+<li class="task-line"
+    [ngClass]="{'checked':data.checked}"
+    (click) = "toggleTask(data.text)">
   {{data.text}}
   <img (click) = 'deleteTask(data.text, $event)' class='trash' src='https://cdn2.iconfinder.com/data/icons/web/512/Trash_Can-512.png'>
 </li>

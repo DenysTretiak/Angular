@@ -1,24 +1,18 @@
-*{
-  box-sizing: border-box;
-}
-
-
-/* Style the header */
 .header {
     background-color: #f44336;
     padding: 30px 40px;
     color: white;
     text-align: center;
 }
-/* Clear floats after the header */
+
 .header:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* Style the input */
-input {
+
+.tasks-input {
     border: none;
     width: 75%;
     padding: 10px;
@@ -26,8 +20,8 @@ input {
     font-size: 16px;
 }
 
-/* Style the "Add" button */
-.addBtn {
+
+.add-button {
     padding: 10px;
     border:none;
     width: 25%;
@@ -40,6 +34,6 @@ input {
     transition: 0.3s;
 }
 
-.addBtn:hover {
+.add-button:hover {
     background-color: #bbb;
 }

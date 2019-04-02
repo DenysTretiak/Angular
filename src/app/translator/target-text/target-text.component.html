@@ -1,10 +1,10 @@
-<div>
+<div class="target-text-container">
   <select  #select (input)="setInput(select.value)">
     <option *ngFor = "let option of options"
             value="{{option.value}}">
       {{option.title}}
     </option>
   </select>
-  <textarea rows="6" name="text" readonly>{{http.targetText | async}}</textarea>
+  <textarea class="target-text-textarea" rows="6" name="text" readonly>{{http.targetText | async}}</textarea>
 </div>
 
